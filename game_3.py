@@ -11,7 +11,6 @@ def play_game_3(n_lives=10):
         wordlist = f.read().splitlines()
 
     word = random.choice(wordlist)
-    word_list = list(word)
 
     board = ["_",] * len(word)
 
@@ -35,7 +34,7 @@ def play_game_3(n_lives=10):
             letter = input("Enter a letter (a-z)\n> ")
     
         letters_guessed.append(letter.lower())
-        result = process_guess(letter, board, word_list)
+        result = process_guess(letter, board, word)
         if result == False:
             n_remaining += -1
 
